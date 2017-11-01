@@ -172,12 +172,12 @@ int strContains(num)
 
     if(test1){
         printf("The string exists\n");
-        return 1;
+        // return 1;
     }
     else
     {
         printf("The string does not exist\n");
-        return 0;
+        // return 0;
     }
 
     // Test 2
@@ -189,12 +189,12 @@ int strContains(num)
 
     if(test2){
         printf("The string exists\n");
-        return 1;
+        // return 1;
     }
     else
     {
         printf("The string does not exist\n");
-        return 0;
+        // return 0;
     }
 
    // Test 3
@@ -206,12 +206,12 @@ int strContains(num)
 
     if(test3){
         printf("The string exists\n");
-        return 1;
+        // return 1;
     }
     else
     {
         printf("The string does not exist\n");
-        return 0;
+        // return 0;
     }
 
    // Test 4
