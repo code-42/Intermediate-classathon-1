@@ -125,9 +125,7 @@ int sumPrimes(int num) {
 Create the following algorithm function:
 Should print a result then return an integer code
 Function name: strContains
-
 Inputs: 2 strings
-
 If the 2nd string does not exist inside the first stringz then print:
 “The string does not exist”
 Then return the integer 0
@@ -135,14 +133,11 @@ If the 2nd string exists inside the first string print:
 “The string exists”
 Then return the integer 1
 Ignore case.
-
 Hacker level:
 If the string contains the word more than once print:
 “This string is full of the word”
 Then return the integer 2
-
 Sample tests:
-
 “endangered” “end” true
 “endangered” “danger” true
 “the dog sleeps in the dog house” “Jack” false
@@ -151,9 +146,7 @@ Hacker level 2: Confirm case
 “The dog sleeps in the dog house” “The” single true
 “The dog sleeps in the dog house” the” single true
 “The dog sleeps in the dog house” “dog” multi true
-
 ***************************************************************************************
-
 NOTE:  this solution was derrived from TutorialsPoint.com C library functino - strstr()
 https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm
 That function was not covered yet in CS50 so I solved this problem through my own research.
