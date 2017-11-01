@@ -1,9 +1,12 @@
-#include <stdio.h>
 #include <cs50.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 long long factorialize(int num);
 int sumFibs(int num);
 int sumPrimes(int num);
+int strContains(int num);
 
 // classathon 1:
 // Create 4 functions to solve the following Algorithms:
@@ -21,9 +24,10 @@ int main(int argc, string argv[])
     // printf("21. num == %d\n", num);
 
     // Output
-    // printf("%lli\n",factorialize(num));
-    // printf("%d\n",sumFibs(num));
+    printf("%lli\n",factorialize(num));
+    printf("%d\n",sumFibs(num));
     printf("%d\n",sumPrimes(num));
+    printf("%d\n",strContains(num));
 }
 
 // Function should return an long long
@@ -110,8 +114,128 @@ int sumPrimes(int num) {
             sum = sum + i;
         }
     }
-
     // printf("sum == %d\n", sum);
     return sum;
+}
 
+
+
+
+/*
+Create the following algorithm function:
+Should print a result then return an integer code
+Function name: strContains
+
+Inputs: 2 strings
+
+If the 2nd string does not exist inside the first stringz then print:
+“The string does not exist”
+Then return the integer 0
+If the 2nd string exists inside the first string print:
+“The string exists”
+Then return the integer 1
+Ignore case.
+
+Hacker level:
+If the string contains the word more than once print:
+“This string is full of the word”
+Then return the integer 2
+
+Sample tests:
+
+“endangered” “end” true
+“endangered” “danger” true
+“the dog sleeps in the dog house” “Jack” false
+“the dog sleeps in the dog house” “dog” true (hacker multiple)
+Hacker level 2: Confirm case
+“The dog sleeps in the dog house” “The” single true
+“The dog sleeps in the dog house” the” single true
+“The dog sleeps in the dog house” “dog” multi true
+
+***************************************************************************************
+
+NOTE:  this solution was derrived from TutorialsPoint.com C library functino - strstr()
+https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm
+That function was not covered yet in CS50 so I solved this problem through my own research.
+I discovered through trial and error that I cannot pass two command-line string arguments argv[1] and argv[2]
+to a function, they have to be string literals and that is beyond me at this time.
+*/
+
+int strContains(num)
+{
+    // Test 1
+    char firstString[] = "endangered";
+    char secondString[] = "end";
+    char *test1;
+
+    test1 = strstr(firstString, secondString);
+
+    if(test1){
+        printf("The string exists\n");
+        return 1;
+    }
+    else
+    {
+        printf("The string does not exist\n");
+        return 0;
+    }
+
+    // Test 2
+    char firstString2[] = "endangered";
+    char secondString2[] = "danger";
+    char *test2;
+
+    test2 = strstr(firstString2, secondString2);
+
+    if(test2){
+        printf("The string exists\n");
+        return 1;
+    }
+    else
+    {
+        printf("The string does not exist\n");
+        return 0;
+    }
+
+   // Test 3
+    char firstString3[] = "the dog sleeps in the dog house";
+    char secondString3[] = "Jack";
+    char *test3;
+
+    test3 = strstr(firstString3, secondString3);
+
+    if(test3){
+        printf("The string exists\n");
+        return 1;
+    }
+    else
+    {
+        printf("The string does not exist\n");
+        return 0;
+    }
+
+   // Test 4
+    char firstString4[] = "the dog sleeps in the dog house";
+    char secondString4[] = "dog";
+    char *test4;
+
+    test4 = strstr(firstString4, secondString4);
+
+    if(test4){
+        printf("The string exists\n");
+        return 1;
+    }
+    else
+    {
+        printf("The string does not exist\n");
+        return 0;
+    }
+
+
+    // Throw away the argument passed in because of the other functions need it
+    // but this one does not
+    int nnum = num;
+    if(nnum == false){
+        printf("%d",nnum);
+    }
 }
