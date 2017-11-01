@@ -38,19 +38,17 @@ Hacker level 2: Confirm case
 
 NOTE:  this solution was derrived from TutorialsPoint.com C library functino - strstr()
 https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm
-That function was not covered yet in CS50 so I solved this problem through my own research.
-I discovered through trial and error that I cannot pass two command-line string arguments argv[1] and argv[2]
-to a function, they have to be string literals and that is beyond me at this time.
+That function was not covered in CS50 yet, so I solved this problem through my own research.
 */
 
 int strContains(char firstString[], char secondString[])
 {
 
-    char *test1;
+    char *test;
 
-    test1 = strstr(firstString, secondString);
+    test = strstr(firstString, secondString);
 
-    if(test1){
+    if(test){
         printf("The string exists\n");
         return 1;
     }
@@ -67,7 +65,7 @@ int main(int argc, char *argv[])
     if (argc != 3)
     {
         // Error message if no argument or too many arguments
-        printf("You must provide two arguments. \n");
+        printf("You must provide two string arguments. \n");
         return 1;
     }
 

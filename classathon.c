@@ -24,10 +24,10 @@ int main(int argc, string argv[])
     // printf("21. num == %d\n", num);
 
     // Output
-    printf("%lli\n",factorialize(num));
-    printf("%d\n",sumFibs(num));
-    printf("%d\n",sumPrimes(num));
-    printf("%d\n",strContains(num));
+    printf("factorialize == %lli\n",factorialize(num));
+    printf("sumFibs == %d\n",sumFibs(num));
+    printf("sumPrimes == %d\n",sumPrimes(num));
+    // printf("%d\n",strContains(num));
 }
 
 // Function should return an long long
@@ -36,18 +36,19 @@ long long factorialize(int num)
     if (num == 0)
         return 1;
 
-    return (num * factorialize(num-1));
+    // return (num * factorialize(num-1));
 
     // This way also works, but one-liner above works more efficiently
-    // int prevNum = 1;
-    // for (int i=1; i <= num; i++)
-    // {
-    //     prevNum = prevNum * i;
-    // }
-    // num = prevNum;
+    int prevNum = 1;
+    for (int i=1; i <= num; i++)
+    {
+        prevNum = prevNum * i;
+        // printf("%d\n",prevNum);
+    }
+    num = prevNum;
 
-    // long long longnum = (long) num;
-    // return longnum;
+    long long longnum = (long) num;
+    return longnum;
 }
 
 
